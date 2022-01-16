@@ -1,8 +1,9 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+import '@exampledev/new.css/new.css';
+import '@fontsource/inter';
+import '@/styles/global.scss'
+
+export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
 }
-
-export default MyApp
