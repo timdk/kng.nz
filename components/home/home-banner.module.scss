@@ -1,0 +1,14 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.banner_text {
+  background-clip: text;
+  background-image: linear-gradient(90deg, #007CF0, #00DFD8);
+  color: transparent;
+  font-size: 100px;
+  font-weight: bold;
+}
