@@ -5,10 +5,10 @@
   min-height: 100vh;
 }
 
-.banner_text {
-  background-clip: text;
-  background-image: linear-gradient(90deg, #007CF0, #00DFD8);
+.banner-text {
   color: transparent;
-  font-size: 100px;
   font-weight: bold;
+  font-size: 100px;
+  background-image: linear-gradient(90deg, #007cf0, #00dfd8);
+  background-clip: text;
 }
