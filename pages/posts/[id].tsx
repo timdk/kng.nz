@@ -4,7 +4,7 @@ import Head from 'next/head'
 import PostData from '@/types/post-data';
 import { getAllPostIds, getPostData } from '@/lib/posts'
 
-import Layout from '@/components/layout'
+import BlogLayout from '@/layouts/blog-layout';
 import Date from '@/components/date'
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 
 const Post: NextPage<Props> = ({ postData }) => {
   return (
-    <Layout>
+    <BlogLayout>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -24,7 +24,7 @@ const Post: NextPage<Props> = ({ postData }) => {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </Layout>
+    </BlogLayout>
   )
 }
 export default Post
