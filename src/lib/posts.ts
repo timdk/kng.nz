@@ -6,7 +6,7 @@ import html from 'remark-html'
 
 import PostData from '@/types/post-data';
 
-const postsDirectory = path.join(process.cwd(), 'posts')
+const postsDirectory = path.join(process.cwd(), 'src/posts')
 
 export function getSortedPostsData() {
   // Get file names under /posts

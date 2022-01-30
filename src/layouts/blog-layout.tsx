@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import Image from 'next/image'
 import Link from 'next/link'
 
 import Layout from './layout';
@@ -20,28 +19,10 @@ const BlogLayout: NextPage<Props> = ({ children, index, title= 'kng.nz' }) => {
         <header>
           {index ? (
             <>
-              <Image
-                priority
-                src="/images/profile.jpg"
-                height={144}
-                width={144}
-                alt={name}
-              />
               <h1>{name}</h1>
             </>
           ) : (
             <>
-              <Link href="/">
-                <a>
-                  <Image
-                    priority
-                    src="/images/profile.jpg"
-                    height={108}
-                    width={108}
-                    alt={name}
-                  />
-                </a>
-              </Link>
               <h2>
                 <Link href="/">
                   <a>{name}</a>
@@ -54,7 +35,7 @@ const BlogLayout: NextPage<Props> = ({ children, index, title= 'kng.nz' }) => {
         {!index && (
           <div>
             <Link href="/posts">
-              <a>← Back to home</a>
+              <a>← Back to posts</a>
             </Link>
           </div>
         )}
