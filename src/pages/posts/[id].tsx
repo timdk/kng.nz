@@ -1,19 +1,21 @@
-import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
-import PostData from '@/types/post-data';
+import { NextPageWithLayout } from '@/types/page'
+
+import PostData from '@/types/post-data'
 import { getAllPostIds, getPostData } from '@/lib/posts'
 
-import BlogLayout from '@/layouts/blog-layout';
+import BlogLayout from '@/layouts/blog-layout'
 import Date from '@/components/date'
 
 interface Props {
   postData: PostData;
 }
 
-const Post: NextPage<Props> = ({ postData }) => {
+const Post: NextPageWithLayout<Props> = ({ postData }) => {
   return (
-    <BlogLayout>
+    <>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -24,9 +26,12 @@ const Post: NextPage<Props> = ({ postData }) => {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </BlogLayout>
+    </>
   )
 }
+
+Post.getLayout = (page) => (<BlogLayout>{page}</BlogLayout>)
+
 export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {

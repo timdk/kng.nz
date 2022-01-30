@@ -1,13 +1,14 @@
-import { NextPage } from 'next';
+import { NextPageWithLayout } from '@/types/page'
 
-import Layout from '../layouts/layout';
-import HomeBanner from '../components/home/home-banner';
+import Layout from '@/layouts/layout'
+import HomeBanner from '@/components/home/home-banner'
 
-const Home: NextPage = () => {
-  return (
-    <Layout>
-      <HomeBanner/>
-    </Layout>
-  );
-};
-export default Home;
+const Home: NextPageWithLayout = () => (
+  <>
+    <HomeBanner/>
+  </>
+)
+
+Home.getLayout = (page) => (<Layout>{page}</Layout>)
+
+export default Home

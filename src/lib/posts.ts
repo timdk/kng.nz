@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
-import PostData from '@/types/post-data';
+import PostData from '@/types/post-data'
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
@@ -25,8 +25,8 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data
-    } as PostData;
+      ...matterResult.data,
+    } as PostData
   })
   // Sort posts by date
   return allPostsData.sort((a, b) => {
@@ -43,7 +43,7 @@ export function getAllPostIds() {
   return fileNames.map(fileName => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, '')
+        id: fileName.replace(/\.md$/, ''),
       }
     }
   })
@@ -66,6 +66,6 @@ export async function getPostData(id: string): Promise<PostData> {
   return {
     id,
     contentHtml,
-    ...matterResult.data
-  } as PostData;
+    ...matterResult.data,
+  } as PostData
 }

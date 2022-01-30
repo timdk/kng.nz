@@ -5,4 +5,4 @@ type PostData =  {
   contentHtml: string,
 }
 
-export default PostData;
+export default PostData
