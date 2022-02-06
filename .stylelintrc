@@ -1,5 +1,5 @@
 {
-  "customSyntax": "postcss-less",
+  "customSyntax": "postcss-scss",
   "plugins": [
     "stylelint-scss",
     "stylelint-order"
