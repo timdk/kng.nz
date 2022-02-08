@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && git branch -D gh-pages && git checkout -b gh-pages && touch out/.nojekyll && git add -f out/ && git commit --no-verify -m \"Deploy to gh-pages\" && git push origin `git subtree split --prefix out gh-pages`:gh-pages --force && git checkout main" ,
+    "deploy": "rm -rf node_modules/.cache && next build && next export && git fetch origin gh-pages && git branch -D gh-pages && git checkout -b gh-pages && touch out/.nojekyll && git add -f out/ && git commit --no-verify -m \"Deploy to gh-pages\" && git push origin `git subtree split --prefix out gh-pages`:gh-pages --force && git checkout main" ,
     "lint": "next lint",
     "prepare": "husky install",
     "test": "jest --watch"
