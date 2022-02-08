@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
-
-const debug = process.env.NODE_ENV !== 'production'
-
 module.exports = {
   reactStrictMode: true,
-  assetPrefix: !debug ? '/kng.nz/' : '',
   // https://github.com/vercel/next.js/discussions/11267#discussioncomment-1758
   webpack: (config) => {
     const rules = config.module.rules.find((rule) => typeof rule.oneOf === 'object').oneOf.filter((rule) => Array.isArray(rule.use))
