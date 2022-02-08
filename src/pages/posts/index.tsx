@@ -15,7 +15,7 @@ interface Props {
 
 const PostIndex: NextPageWithLayout<Props> = ({ allPostsData }) => (
   <section>
-    <h2>Blog</h2>
+    <h2>Posts</h2>
     <ul>
       {allPostsData.map(({ id, date, title }) => (
         <li key={id}>

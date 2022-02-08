@@ -1,9 +1,9 @@
-import { NextPage } from 'next';
+import { NextPage } from 'next'
 import Link from 'next/link'
 
-import Layout from './layout';
+import Layout from './layout'
 
-import '@exampledev/new.css/new.css';
+import '@exampledev/new.css/new.css'
 
 const name = 'kng.nz'
 
@@ -18,9 +18,11 @@ const BlogLayout: NextPage<Props> = ({ children, index, title= 'kng.nz' }) => {
       <div>
         <header>
           {index ? (
-            <>
-              <h1>{name}</h1>
-            </>
+            <h1>
+              <Link href="/">
+                <a>{name}</a>
+              </Link>
+            </h1>
           ) : (
             <>
               <h2>
@@ -43,4 +45,4 @@ const BlogLayout: NextPage<Props> = ({ children, index, title= 'kng.nz' }) => {
     </Layout>
   )
 }
-export default BlogLayout;
+export default BlogLayout
